@@ -5,7 +5,7 @@ function Header() {
     return (
       <div className="Header">
         <p>Round Table</p>
-        <img class="img-logo" src={logo} alt="Logo" />
+        <img className="img-logo" src={logo} alt="Logo" />
       </div>
     );
   }
