@@ -6,6 +6,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  border-radius: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  min-height: 100vh;
 }
 
 .App-link {
@@ -50,8 +52,13 @@
 }
 
 .img-logo{
-  width: 85px;
-  height: 85px;
+  height: 10vmin;
+  border-radius: 30px;
+  position: fixed;
+  right: 0px;
+}
+
+.nav-bar{
   border-radius: 30px;
   position: fixed;
   left: 0px;
