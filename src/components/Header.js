@@ -1,5 +1,6 @@
 import '../App.css';
-import logo from './img/roundtable.jpg';
+import holli from './img/holli.gif';
+import logo from '../logo.svg';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -11,46 +12,44 @@ import {
 function Header() {
   return (
     <div className="Header">
-      <Router>
-        <div className="nav-bar">
-          <ul>
-            <li>
-              <Link to="./App">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-          </ul>
+    <Router>
+      <div className="nav-bar">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+        </ul>
 
-          <img className="img-logo" src={logo} alt="Logo" />
+        <hr />
 
-          <hr />
+        {/*
+        A <Switch> looks through all its children <Route>
+        elements and renders the first one whose path
+        matches the current URL. Use a <Switch> any time
+        you have multiple routes, but you want only one
+        of them to render at a time
+      */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
 
-          {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-
-    </div>
+  </div>
   );
 }
 
@@ -60,7 +59,7 @@ function Header() {
 function Home() {
   return (
     <div>
-      <h2>Home</h2>
+      <img className="App-logo" src={logo} alt="Logo" />
     </div>
   );
 }
@@ -68,7 +67,7 @@ function Home() {
 function About() {
   return (
     <div>
-      <h2>About</h2>
+      <img className="App-holli" src={holli} alt="Logo" />
     </div>
   );
 }
